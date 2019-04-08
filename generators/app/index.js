@@ -30,7 +30,13 @@ module.exports = class extends Generator {
   }
 
   install () {
-    this.npmInstall(['ts-node', 'tslint', 'tslint-config-standard', 'typescript'], {
+    this.npmInstall([
+      'ts-node',
+      'tslint',
+      'tslint-config-standard',
+      'typescript',
+      '@types/node'
+    ], {
       'save-dev': true
     })
 
