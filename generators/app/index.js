@@ -19,8 +19,21 @@ module.exports = class extends Generator {
 
   writing () {
     this.fs.copy(
-      this.templatePath('**'),
+      this.templatePath('static/**'),
       this.destinationRoot(),
+      {
+        globOptions: {
+          dot: true
+        }
+      }
+    )
+
+    this.fs.copyTpl(
+      this.templatePath('dynamic/**'),
+      this.destinationRoot(),
+      {
+        year: new Date().getFullYear()
+      },
       {
         globOptions: {
           dot: true
