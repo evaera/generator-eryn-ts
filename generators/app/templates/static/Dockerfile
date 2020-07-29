@@ -7,5 +7,5 @@ EXPOSE 8080
 USER appuser
 COPY package.json ./
 RUN npm install
-COPY server ./server
+COPY src ./src
 ENTRYPOINT ["npm", "start"]
