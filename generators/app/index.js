@@ -13,8 +13,13 @@ module.exports = class extends Generator {
       main: 'dist/index.js',
       'skip-test': true,
       'skip-keywords': true,
-      'skip-repo': true
+      'skip-repo': true,
+      scripts: {
+        start: 'ts-node src/index.ts'
+      }
     })
+
+    this.composeWith(require.resolve('generator-git-init'))
   }
 
   writing () {
@@ -45,15 +50,19 @@ module.exports = class extends Generator {
   install () {
     this.npmInstall([
       'ts-node',
-      'tslint',
-      'tslint-config-standard',
+      'eslint',
+      'eslint-config-prettier',
+      'eslint-plugin-prettier',
+      '@typescript-eslint/eslint-plugin',
+      '@typescript-eslint/parser',
       'typescript',
-      '@types/node'
+      '@types/node',
+      '@types/node-fetch'
     ], {
       'save-dev': true
     })
 
-    this.npmInstall(['dotenv'])
+    this.npmInstall(['dotenv', 'node-fetch'])
 
     this.installDependencies({
       bower: false

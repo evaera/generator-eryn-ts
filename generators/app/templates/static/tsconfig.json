@@ -1,15 +1,12 @@
 {
-	"compilerOptions": {
-		"module": "commonjs",
-		"target": "es2018",
-		"noImplicitAny": true,
-		"strictNullChecks": true,
-		"strict": true,
-		"noUnusedLocals": true,
-		"moduleResolution": "node",
-		"sourceMap": true,
-		"outDir": "dist",
-		"resolveJsonModule": true,
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "lib",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2017",
 		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
 		"lib": [
@@ -18,8 +15,9 @@
 			"es2018",
 			"esnext"
 		]
-	},
-	"include": [
-		"./src/**/*"
-	]
+  },
+  "compileOnSave": true,
+  "include": [
+    "src"
+  ]
 }
