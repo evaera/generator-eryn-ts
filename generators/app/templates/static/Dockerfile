@@ -5,7 +5,7 @@ WORKDIR /home/appuser/app
 RUN chown appuser:appuser -R .
 EXPOSE 8080
 USER appuser
-COPY package.json ./
+COPY package.json package-lock.json tsconfig.json ./
 RUN npm install
 COPY src ./src
 ENTRYPOINT ["npm", "start"]
